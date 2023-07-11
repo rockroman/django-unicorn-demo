@@ -1,3 +1,47 @@
 <div>
-    <!-- put component code here -->
+  <!-- put component code here -->
+
+  <h3 class="text-center mt-4">Comment list</h3>
+  <hr />
+
+  <!-- Allow user to enter a new movie, and add to list.
+        The input is bound to a property called "content" on the component
+        Button connects to an 'add_comment' method on the component -->
+  <div class="container">
+    <div class="align-self-center border d-flex justify-content-center py-2">
+      <input class="mx-2" type="text" unicorn:model="content" />
+      <button class="btn btn-primary" unicorn:click="add_comment">
+        Add Comment
+      </button>
+    </div>
+  </div>
+  <!-- Allow user to delete all the comments from their list.
+            Connects to an 'delete_all' method on the component -->
+  <div class="d-flex justify-content-center mt-3">
+    <button class="mt-2 btn btn-danger" unicorn:click="delete_all">
+      Delete All
+    </button>
+  </div>
+
+  <!-- Show the existing comments, from the component's "comment" property -->
+  <div class="d-flex justify-content-center mt-3">
+    <ul class="w-50">
+      {% for comment in comments %}
+      <li
+        class="mr-3 border p-3 my-3 d-flex flex-column"
+        unicorn:key="{{comment.id}}"
+      >
+        <p class="text-secondary fw-bold fst-italic fs-3">
+          {{ comment.content }}
+        </p>
+        <button
+          class="mt-2 w-50 btn btn-warning"
+          unicorn:click="delete_comment({{comment.id}})"
+        >
+          Delete
+        </button>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>

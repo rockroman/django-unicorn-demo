@@ -1,5 +1,8 @@
-{% extends 'base.html' %} {% load static %} {% block content %} {% csrf_token %}
+{% extends 'base.html' %} {% load static %} {% load unicorn%} {% unicorn_scripts
+%} {% block content %}
 
-<h1 class="text-center mt-3">My component</h1>
+<div class="container">
+  <main>{% unicorn 'comment' %}</main>
+</div>
 
 {% endblock %}
