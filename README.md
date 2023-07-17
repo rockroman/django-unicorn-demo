@@ -43,3 +43,9 @@ This is a small demo project showcasing the dynamic capabilities of Django Unico
 
 8. Run the development server:
    `python manage.py runserver`
+
+## Usage
+
+- Enter a new comment in the input field and click "Add Comment" to add it to the comment list.
+- Click the "Delete" button next to a comment to delete it.
+- Click the "Edit" button to edit a comment. The input field will be populated with the comment's content. Make changes and click "Update Comment" to save the updated comment.
